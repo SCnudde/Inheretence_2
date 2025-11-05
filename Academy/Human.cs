@@ -43,7 +43,7 @@ namespace Academy
                 return //Split ('.') разделяет "Academy.Type" по точке на массив строк, и из этого массива
                       //мы берем последний элемент
                 $"{ base.ToString().Split('.').Last()}:".PadRight(10) +
-                $" {LastName.PadRight(10)} {FirstName.PadRight(10)} {Age.ToString().PadRight(5)}";
+                $" {LastName.PadRight(10)} {FirstName.PadRight(10)} {Age.ToString().PadRight(10)}";
         // PadRight() - выравнивает строку по левому борту. от Padding - выравнивание
         
         }

@@ -53,8 +53,8 @@ namespace ACADEMY
 
         public override string ToString()
         {
-          return base.ToString()+$"{Speciality.PadRight(16)} {Group.PadRight(8)} " +
-                $" {Rating.ToString().PadRight(8)} {Attendance.ToString().PadRight(8)}";          
+          return base.ToString()+$"{Speciality.PadRight(10)} {Group.PadRight(10)} " +
+                $" {Rating.ToString().PadRight(10)} {Attendance.ToString().PadRight(10)}";          
         }
     }
 }

@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 
 namespace Academy
@@ -39,7 +40,7 @@ namespace Academy
 
         public override string ToString()
         {
-            return base.ToString();
+            return base.ToString() + $"{Speciality.PadRight(10)} {Experience.ToString().PadRight(10)} ";
         }
 
 

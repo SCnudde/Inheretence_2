@@ -58,7 +58,7 @@ namespace ACADEMY
             //(Upcast - приведение дочернего объекта к базовуму типу)
             Human[] group =
             {
-                new Student ("Pinkman", "Jessie", 22, "Chemistry", "ww_220", 90, 95),
+                new Student ("Pinkman", "Jesse", 22, "Chemistry", "ww_220", 90, 95),
                 new Teacher ("White", "Waiter", 50,"Chemistry", 25),
                 new Graduate ("Schreder", "Hank", 40, "Criminalistics", "OBN", 50, 60, "How to catch Heisenberg"),
                 new Student ("Vercetty", "Tommy", 30,"Theft", "Vice", 98, 99),

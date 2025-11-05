@@ -7,12 +7,13 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.IO;
 
 namespace ACADEMY
 {
     internal class Program
     {
-        static readonly string delimiter = "_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-\n";
+        static readonly string delimiter = "_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_\n";
 
 
         static void Main(string[] args)
@@ -73,6 +74,27 @@ namespace ACADEMY
                 //group[i].Info();
                 Console.WriteLine(group[i].ToString());
                 Console.WriteLine(delimiter);
+            }
+
+            string Path = "group_members.txt";
+            File.Create(Path).Close();
+
+            using (StreamWriter sw = new StreamWriter(Path))
+            {
+                for (int i = 0; i < group.Length; i++)
+                {
+                    sw.WriteLine(group[i].ToString());
+                    sw.WriteLine(delimiter);
+                }
+            }
+
+            using (StreamReader sr = new StreamReader(Path))
+            {
+                string line;
+                while ((line = sr.ReadLine()) != null)
+                {
+                    Console.WriteLine(line);
+                }
             }
         }
     }

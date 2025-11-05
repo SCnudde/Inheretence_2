@@ -47,5 +47,11 @@ namespace Academy
         // PadRight() - выравнивает строку по левому борту. от Padding - выравнивание
         
         }
+
+        public virtual string ToStringCSV()
+        {
+            return this.GetType().ToString().Split('.').Last() + "," + $"{LastName}, {FirstName}, {Age} ";
+        }
+
     }
 }

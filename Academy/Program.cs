@@ -8,6 +8,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.IO;
+using System.Diagnostics;
 
 namespace ACADEMY
 {
@@ -83,7 +84,7 @@ namespace ACADEMY
             {
                 for (int i = 0; i < group.Length; i++)
                 {
-                    sw.WriteLine(group[i].ToString());
+                    sw.WriteLine(group[i]);
                     sw.WriteLine(delimiter);
                 }
             }
@@ -96,6 +97,25 @@ namespace ACADEMY
                     Console.WriteLine(line);
                 }
             }
+            Process.Start("notepad", "group_members.txt");
+
+            Save(group, Path);
+
+            //------------------------                   
+
+        }
+
+        static void Save(Human[] group, string filename)
+        {
+            StreamWriter writer = new StreamWriter(filename);
+
+            for (int i = 0; i < group.Length; i++)
+            {
+                writer.WriteLine(group[i].ToStringCSV());
+
+            }
+            writer.Close();
+            System.Diagnostics.Process.Start("notepad", filename);
         }
     }
 }

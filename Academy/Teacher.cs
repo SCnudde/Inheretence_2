@@ -43,6 +43,9 @@ namespace Academy
             return base.ToString() + $"{Speciality.PadRight(10)} {Experience.ToString().PadRight(10)} ";
         }
 
-
+        public override string ToStringCSV()
+        {
+           return base.ToStringCSV() + $",{Speciality} {Experience}";
+        }
     }
 }

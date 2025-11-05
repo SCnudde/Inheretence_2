@@ -24,7 +24,7 @@ namespace ACADEMY
 
             Console.WriteLine(delimiter);
 
-            Student student = new Student("Pinkman","Jessie", 22, "Chemistry", "WW_220",90,95);
+            Student student = new Student("Pinkman","Jesse", 22, "Chemistry", "WW_220",90,95);
             student.Info();
             Console.WriteLine(delimiter);
 
@@ -35,7 +35,7 @@ namespace ACADEMY
 #endif
 #if INHERITANCE_2
 
-            Human human = new Human("Pinkman", "Jessie", 22);
+            Human human = new Human("Pinkman", "Jesse", 22);
             human.Info();
             Console.WriteLine(delimiter);
 

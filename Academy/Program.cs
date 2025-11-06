@@ -1,5 +1,6 @@
 ﻿//#define INHERITANCE_1
-#define INHERITANCE_2
+//#define INHERITANCE_2
+//#define WRITE_TO_FILE
 
 using Academy;
 using System;
@@ -58,6 +59,8 @@ namespace ACADEMY
 #endif
             //Base-class pointers: Generalisation
             //(Upcast - приведение дочернего объекта к базовуму типу)
+#if WRITE_TO_FILE
+
             Human[] group =
             {
                 new Student ("Pinkman", "Jesse", 22, "Chemistry", "ww_220", 90, 95),
@@ -76,6 +79,7 @@ namespace ACADEMY
                 Console.WriteLine(group[i].ToString());
                 Console.WriteLine(delimiter);
             }
+            Save(group, "group.txt");
 
             string Path = "group_members.txt";
             File.Create(Path).Close();
@@ -99,10 +103,27 @@ namespace ACADEMY
             }
             Process.Start("notepad", "group_members.txt");
 
-            Save(group, Path);
+            //Save(group, Path);
 
             //------------------------                   
+#endif
 
+            Human[] group = Load("group.txt");
+            Print(group);
+
+        }
+
+       
+
+
+        static void Print(Human[] group)
+        {            
+            for (int i = 0; i < group.Length; i++)
+            {
+                Console.WriteLine(group[i]);
+                Console.WriteLine(delimiter);
+            }
+            Console.WriteLine();
         }
 
         static void Save(Human[] group, string filename)
@@ -117,5 +138,46 @@ namespace ACADEMY
             writer.Close();
             System.Diagnostics.Process.Start("notepad", filename);
         }
+
+        static Human[] Load(string filename )
+        {
+            List<Human> group = new List<Human>();
+            StreamReader reader = new StreamReader(filename);
+
+            try
+            {
+                while(!reader.EndOfStream)
+                {
+                    string buffer = reader.ReadLine();
+                    string[] values = buffer.Split(',');
+                    //Human human = humanFactory(values.First());
+                    //human.Init(values); 
+                    //group.Add(human);
+                    group.Add(HumanFactory(values[0]).Init(values));
+                }
+            }
+            catch(Exception ex) 
+            {
+                Console.WriteLine(ex.Message);
+            }
+            reader.Close();
+            return group.ToArray();
+        }
+
+        static Human HumanFactory(string type)
+        {
+            Human human = null;
+            switch (type)
+            {
+                case "Human": human = new Human("", "", 0);break;
+                case "Student": human = new Student("", "", 0, "", "", 0, 0);break;
+                case "Graduate": human = new Graduate("", "", 0, "", "", 0, 0, ""); break;
+                case "Teacher": human = new Teacher("", "", 0, "", 0); break;
+            }
+            return human;
+        }
+
+
+
     }
 }

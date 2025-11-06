@@ -40,12 +40,20 @@ namespace Academy
 
         public override string ToString()
         {
-            return base.ToString() + $"{Speciality.PadRight(10)} {Experience.ToString().PadRight(10)} ";
+            return base.ToString() + $"{Speciality.PadRight(24)} {Experience.ToString().PadRight(10)} ";
         }
 
         public override string ToStringCSV()
         {
-           return base.ToStringCSV() + $",{Speciality} {Experience}";
+           return base.ToStringCSV() + $",{Speciality}, {Experience}";
+        }
+
+        public override Human Init(string[] values)
+        {
+            base.Init(values);
+            Speciality = values[4];
+            Experience = Convert.ToInt32(values[5]);
+            return this;
         }
     }
 }

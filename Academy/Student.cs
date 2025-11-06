@@ -53,13 +53,23 @@ namespace ACADEMY
 
         public override string ToString()
         {
-          return base.ToString()+$"{Speciality.PadRight(10)} {Group.PadRight(10)} " +
+          return base.ToString()+$"{Speciality.PadRight(24)} {Group.PadRight(10)} " +
                 $" {Rating.ToString().PadRight(10)} {Attendance.ToString().PadRight(10)}";          
         }
 
         public override string ToStringCSV()
         {
-            return base.ToStringCSV() + $"{Speciality},{Group},{Rating},{Attendance}";
+            return base.ToStringCSV() + $",{Speciality},{Group},{Rating},{Attendance}";
+        }
+
+        public override Human Init(string[] values)
+        { 
+            base.Init(values); 
+            Speciality = values[4];
+            Group = values[5];
+            Rating = Convert.ToDouble(values[6]);
+            Attendance = Convert.ToDouble(values[7]);
+            return this;
         }
     }
 }

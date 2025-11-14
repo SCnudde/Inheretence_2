@@ -1,4 +1,5 @@
 <Solution>
-  <Project Path="Academy/Academy.csproj" />
-  <Project Path="Inheretence_2/Inheretence_2.csproj" />
+  <Project Path="AbstractGeometry/AbstractGeometry.csproj" Id="1cceceb7-d1a4-4955-865c-7bed26805ff9" />
+  <Project Path="Academy/Academy.csproj" Id="9a890717-55b9-49c6-8d7e-c73e00d6f586" />
+  <Project Path="Inheretence_2/Inheretence_2.csproj" Id="4cfdceda-6f09-4155-b064-473ce5ad3258" />
 </Solution>

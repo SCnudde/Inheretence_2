@@ -1,0 +1,5 @@
+Student,Pinkman, Jesse, 22 ,Chemistry,ww_220,90,95
+Teacher,White, Waiter, 50 ,Chemistry, 25
+Graduate,Schreder, Hank, 40 ,Criminalistics,OBN,50,60,How to catch Heisenberg
+Student,Vercetty, Tommy, 30 ,Theft,Vice,98,99
+Teacher,Diaz, Ricardo, 50 ,Weapons distribution, 20

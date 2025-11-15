@@ -33,7 +33,7 @@ namespace AbstractGeometry
             e.Graphics.DrawEllipse(pen, StartX, StartY, (float)(2 * Radius), (float)(2 * Radius));
             SolidBrush brush = new SolidBrush(Color);
           
-            //e.Graphics.FillEllipse(brush, StartX, StartY, (float)(2 * Radius), (float)(2 * Radius));
+            e.Graphics.FillEllipse(brush, StartX, StartY, (float)(2 * Radius), (float)(2 * Radius));
         }
         public override void Info(PaintEventArgs e)
         {

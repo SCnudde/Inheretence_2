@@ -58,8 +58,12 @@ namespace AbstractGeometry
                     new Point (StartX + (int)Base/2, StartY)
                 };                
             
-            e.Graphics.DrawPolygon(pen, vertices);                          
-                
+            e.Graphics.DrawPolygon(pen, vertices);
+           
+            SolidBrush brush = new SolidBrush(Color);
+
+            e.Graphics.FillPolygon(brush, vertices);
+
         }
 
         public override void Info(PaintEventArgs e)

@@ -1,4 +1,4 @@
-﻿//#define ABSTRACT_1
+﻿#define ABSTRACT_1
 
 using System;
 using System.Collections.Generic;
@@ -25,44 +25,42 @@ namespace AbstractGeometry
             PaintEventArgs e = new PaintEventArgs( graphics, window_rect );
             //e.Graphics.DrawRectangle(new Pen(Color.Red), 100, 100, 500, 300);
 #if ABSTRACT_1
-            Rectangle rectangle = new Rectangle(200, 120, 100, 50, 3, Color.SkyBlue);
+            Rectangle rectangle = new Rectangle(50, 20,400, 50, 3, Color.SkyBlue);
             rectangle.Info(e);
 
-            Square square = new Square(20, 250, 200, 5, Color.Red);
+            Square square = new Square(20, 400, 70, 5, Color.Red);
             square.Info(e);
 
-            Circle circle = new Circle(20, 500, 200, 5, Color.YellowGreen);
+            Circle circle = new Circle(10, 400, 100, 5, Color.YellowGreen);
             circle.Info(e);
 
-            IsoscelesTriangle iso = new IsoscelesTriangle(50, 350, 150, 150, 3, Color.Blue);
+            IsoscelesTriangle iso = new IsoscelesTriangle(150, 250, 400, 120, 3, Color.Blue);
             iso.Info(e);
 
-            EqualateralTriangle equ = new EqualateralTriangle(50, 650, 200, 4, Color.DeepPink);
-            equ.Info(e);
+            //EqualateralTriangle equ = new EqualateralTriangle(50, 650, 200, 4, Color.DeepPink);
+            //equ.Info(e);
 
 #endif
-            Shape[] shapes =
-         {
-            new Rectangle(200, 120, 100, 50, 3, Color.SkyBlue),
-            new Circle(20, 500, 200, 5, Color.YellowGreen),
-            new Square(20, 250, 200, 5, Color.Red),
-            new IsoscelesTriangle(50, 350, 150, 150, 3, Color.Blue),
-            new EqualateralTriangle(50, 650, 200, 4, Color.DeepPink)
+            //            Shape[] shapes =
+            //         {
+            //            new Rectangle(100, 120, 200, 500, 3, Color.SkyBlue),
+            //            new Circle(20, 500, 200, 5, Color.YellowGreen),
+            //            new Square(20, 250, 200, 5, Color.Red),
+            //            new IsoscelesTriangle(50, 350, 150, 150, 3, Color.Blue),
+            //            new EqualateralTriangle(50, 650, 200, 4, Color.DeepPink)
 
-        };
+            //        };
 
-            for (int i = 0; i < shapes.Length; i++)
-            {
-                if (!(shapes[i] is IHaveDiagonal))
-                {
-                    shapes[i].Draw(e);
-                }
-            }
-
-        }      
+            //            for (int i = 0; i < shapes.Length; i++)
+            //            {
+            //                if (!(shapes[i] is IHaveDiagonal))
+            //                {
+            //                    shapes[i].Draw(e);
+            //                }
+            //            }
+        }  
 
         
-
         [DllImport("kernel32.dll")]
         public static extern IntPtr GetConsoleWindow();
         
